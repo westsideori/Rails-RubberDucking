@@ -1,0 +1,13 @@
+<h1><%= @duck.name %></h1>
+
+<p>Description:</p>
+<p><%= @duck.description %></p>
+
+<p>Owner:</p>
+<% if @duck.student %>
+    <p><%= link_to @duck.student.name, student_path(@duck.student_id) %></p>
+<% else %>
+    <p>None</p>
+<% end %>
+
+<%= button_to "Delete Duck", duck_path(@duck), method: :delete %>
